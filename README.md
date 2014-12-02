@@ -1,7 +1,7 @@
-pgb_pres_papers
+Post-Genome Bio Discussion Presentation - Malmstrom et al. 2009
 ===============
 
-Post-genome bio discussion paper references
+Paper references are in this repository, able to download as ZIP
 
 |First.author | Year|Title                                                                                                                                                                                                                                                            |DOI                                      |
 |:------------|----:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------|
