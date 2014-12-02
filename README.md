@@ -3,6 +3,8 @@ Post-Genome Bio Discussion Presentation - Malmstrom et al. 2009
 
 Paper references and figures are available in this repository, able to download as ZIP (link on the right hand side).
 
+Notes on references [here](https://github.com/lmmx/pgb_pres_papers/blob/master/Malmstrom_refnotes.md).
+
 |First.author | Year|Title                                                                                                                                                                                                                                                            |DOI                                      |
 |:------------|----:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------|
 |Ghaemmaghami | 2003|Global analysis of protein expression in yeast                                                                                                                                                                                                                   |10.1038/nature02046                      |
