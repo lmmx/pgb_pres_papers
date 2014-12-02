@@ -19,7 +19,7 @@ Followed by a 2010 study ["Proteome-wide protein concentrations in the human hea
 
 This study presents **methodology to quantify absolute concentrations** [no. protein copies per cell in a population] **for a large fraction of the proteome in <u>genetically unperturbed</u> cells**
 
-* Ref. 1: Ghaemmaghami 2003, [](http://dx.doi.org/10.1038/nature02046)
+* Ref. 1: [Ghaemmaghami 2003](http://dx.doi.org/10.1038/nature02046), example of such genetic perturbation
 
 
 ### Cited in Handbook of systems biology <small>(p10, in Ch. 1)
@@ -60,3 +60,33 @@ Protein amount, localization, modification state, turnover and interactions can 
      * for this reason visual proteomics approaches so far were limited to **highly stable** and **conserved** targets.
      * The abundance of the targeted protein complexes in the cell and the extent to which the template library accounts for all large protein complexes that exist in the cell is important, as high abundant protein complexes of similar structure might compete for assignments and thereby have negative effect on performance.
      * Malmstrom 2009 is an example of how **targeted and directed MS measurements** can provide required auxiliary info about protein abundances on a proteome-wide scale.
+
+`On the Leptospira interrogans study`
+
+
+
+
+
+
+* Targeted proteomics experiments detecting the identity and concentrations of cellular proteins were combined with cryoET-based template-matching to detect spatial localisations of a set of protein complexes
+* to identify template structures that might be suitable for the template matching, 26 candidate assemblies >250 kDa and with a certain sequence conservation were retrieved from structural databases
+* protein abundance ranged over 3.5 orders of magnitude, only 10 other protein complexes of sufficient ize for matching were found with aundances of >100 copies per cell
+* tomograms acquires and subjected to template matching and scoring
+* local conc. of targeted protein complexes varied within and across datasets (cells displayed avg. ribosome conc. of ~20μM in cytoplasm, local conc. ranging from 5 to 30μM
+   * local conc. of GroEL together with GroEL-ES were larger and ranged from ~8 to 100 μM
+
+
+
+
+
+
+* **This study showed that**:
+  * background noise reduces performance depending on [MTF](http://photo.net/learn/optics/mtf/) (performance) of the CCD camera
+  * the missing wedge can introduce angular bias to discoery rate of templates with anisotropic signal (such as elongated ATP synthase)
+  * specificity increases with template abundance
+  * specificity decreases with degree of molecular crowding
+* The last two effects are **more pronounced for smaller templates**. Specificity achieved for high abundant MDa complexes was concluded satisfactory. True positive discovery rates higher than 50% are difficult to achieve when protein complexes of smaller M<sub>W</sub> are targeted. Complexes of very low cellular abundance are challenging to statistically model
+
+Throughput limitations lie in cryoEM as shown by work on *P. pneumoniae* by [Yus 2009](http://dx.doi.org/10.1126/science.1177263), [Kuhner 2009](http://dx.doi.org/10.1126/science.1176343), [Guell 2009](http://dx.doi.org/10.1126/science.1176951)).
+
+* nevertheless, demonstrated power of mapping macromolecular structures into entire-cell tomograms when combined with unbiased large-scale complex purification techniques. Template library was in part built here from single-particle EM structures of *M. pneumoniae* protein complexes, overcoming problematic assumption of structural conservation across species
