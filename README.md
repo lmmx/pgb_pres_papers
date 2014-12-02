@@ -1,7 +1,7 @@
 Post-Genome Bio Discussion Presentation - Malmstrom et al. 2009
 ===============
 
-Paper references are in this repository, able to download as ZIP
+Paper references and figures are available in this repository, able to download as ZIP (link on the right hand side).
 
 |First.author | Year|Title                                                                                                                                                                                                                                                            |DOI                                      |
 |:------------|----:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------|
