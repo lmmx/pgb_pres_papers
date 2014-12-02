@@ -15,6 +15,29 @@
 
 > MS-based methods for relative proteome quant. have broadly affected life science research
 
+
+
+#### MS 1: LC-ESI
+
+#### MS 2: absolute quantification of 19 proteins (targeted SRM)
+
+#### MS 3: LC-MS/MS
+
+* Extracted precursor ion intensities for peptides derived from LC-MS maps acquired from trypsinized cell lysates
+* Calculated total protein ion intensity for the respcetive proteins by using median intensities from the three most intense peptides matching to a specific protein (refs 9-11: Silva 2006, Vogel 2008, Ishihama 2005)
+
+Mueller 2007 presented an OSS tool called *SuperHirn*, a set of modules to process LC-MS data acquired on a high-res. MS. Includes: feature extraction and quantification, LC-MS similarity analysis, LC-MS alignment of multiple datasets and **intensity normalisation**.
+
+> <sub>These program routines extract profiles of measured features and comprise tools for clustering and classification analysis of the profiles.
+
+ > <sub>Only a small subset of peptide features in the sample are selected for fragmentation analysis leading to a systematic undersampling of peptide identifications in conventional shotgun LC-MS experiments ([Li 2005](http://dx.doi.org/10.1074/mcp.M500141-MCP200)).
+ 
+ > > <sub>There is an increasing interest in the quantitative proteomic measurement of the protein contents of numerous, substantially similar samples. Typical examples include the discovery of protein biomarkers from clinical samples (3, 22, 23) and the measurement of the response of cells and tissues to perturbations. For biomarker discovery, large numbers of samples need to be processed to achieve sufficient statistical power to distinguish disease-specific markers from coincidental proteome fluctuations within the human population. For the study of cellular response to perturbations, temporal and dose-de- pendent changes are usually particularly informative for the identification of patterns of proteins that are specifically affected by the treatment (24). Therefore, these and similar applications require high sample throughput and highly reproducible coverage of the proteome.
+
+> > <sub>**Quantitative LC-MS/MS is of limited use for such large scale studies because of significant undersampling** of complex proteomic samples. Even after extensive peptide fractionation, **a significant fraction of the peptides present in a sample is not selected by the mass spectrometer** for [CID](https://en.wikipedia.org/wiki/Tandem_mass_spectrometry#Collision-induced_dissociation) [collision-induced dissociation]. These peptides are neither identified nor quantified. Therefore, **if multiple, substantially similar samples are being analyzed, the fraction of those peptides that is measured in every sample rapidly decreases with increasing sample number**. Furthermore the peptides that are consistently detected tend to be the high abundance peptides that generate intense MS signals, whereas **many lower abundance, biologically interesting peptides are inconsistently sampled**. As a result, **it is very difficult to consistently obtain quantitative information on low abundance proteins across multiple samples by the LC-MS/MS**.
+
+---
+
 Followed by a 2010 study ["Proteome-wide protein concentrations in the human heart"](http://dx.doi.org/10.1039/c004495d)
 
 This study presents **methodology to quantify absolute concentrations** [no. protein copies per cell in a population] **for a large fraction of the proteome in <u>genetically unperturbed</u> cells**
