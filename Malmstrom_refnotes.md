@@ -26,6 +26,11 @@
 * Extracted precursor ion intensities for peptides derived from LC-MS maps acquired from trypsinized cell lysates
 * Calculated total protein ion intensity for the respcetive proteins by using median intensities from the three most intense peptides matching to a specific protein (refs 9-11: Silva 2006, Vogel 2008, Ishihama 2005)
 
+
+
+
+
+
 Mueller 2007 presented an OSS tool called *SuperHirn*, a set of modules to process LC-MS data acquired on a high-res. MS. Includes: feature extraction and quantification, LC-MS similarity analysis, LC-MS alignment of multiple datasets and **intensity normalisation**.
 
 > <sub>These program routines extract profiles of measured features and comprise tools for clustering and classification analysis of the profiles.
@@ -35,6 +40,65 @@ Mueller 2007 presented an OSS tool called *SuperHirn*, a set of modules to proce
  > > <sub>There is an increasing interest in the quantitative proteomic measurement of the protein contents of numerous, substantially similar samples. Typical examples include the discovery of protein biomarkers from clinical samples (3, 22, 23) and the measurement of the response of cells and tissues to perturbations. For biomarker discovery, large numbers of samples need to be processed to achieve sufficient statistical power to distinguish disease-specific markers from coincidental proteome fluctuations within the human population. For the study of cellular response to perturbations, temporal and dose-de- pendent changes are usually particularly informative for the identification of patterns of proteins that are specifically affected by the treatment (24). Therefore, these and similar applications require high sample throughput and highly reproducible coverage of the proteome.
 
 > > <sub>**Quantitative LC-MS/MS is of limited use for such large scale studies because of significant undersampling** of complex proteomic samples. Even after extensive peptide fractionation, **a significant fraction of the peptides present in a sample is not selected by the mass spectrometer** for [CID](https://en.wikipedia.org/wiki/Tandem_mass_spectrometry#Collision-induced_dissociation) [collision-induced dissociation]. These peptides are neither identified nor quantified. Therefore, **if multiple, substantially similar samples are being analyzed, the fraction of those peptides that is measured in every sample rapidly decreases with increasing sample number**. Furthermore the peptides that are consistently detected tend to be the high abundance peptides that generate intense MS signals, whereas **many lower abundance, biologically interesting peptides are inconsistently sampled**. As a result, **it is very difficult to consistently obtain quantitative information on low abundance proteins across multiple samples by the LC-MS/MS**.
+
+
+
+
+> <sub>An alternative to an MS2-based approach is the analysis of peptide ion currents directly at the MS1 level that allows mapping of extracted peptide features across LC-MS experiments. For this purpose, feature extraction routines detect peptide signals in noisy background and compute the ion counts of selected peptides (SIC) without relaying on MS2 peptide identification information. Even though the comparison of absolute SIC values is complicated by experimental verification, the application of peptide signal intensity normalization methods allows restoring the linear correlation between the original peptide concentration and the measured signal intensity. These properties offer an **alternative to the costly isotopic labeling strategies** where chemically modified peptides are compared within the same LC-MS experiment.
+
+
+
+
+
+
+
+
+
+
+
+
+> <sub>While quantification based on stable isotope labeling seems to be **more accurate**, it involves more extensive sample processing if more than two (or four in the case of iTRAQ) samples are compared ([Meng 2007](http://dx.doi.org/10.1016/j.jasms.2006.09.014)).
+
+> ><sub>Peak intensity variability is inherent in label-free LC-MS experiments, and this variability can arise from multiple sources, including biochemical sample processing (enzymatic digestion, reductive alkylation, etc.) and LC-MS profiling (e.g., variation in sample injection or electrospray condition)</blockquote>
+
+* Malmstrom (2006) [*Optimized peptide separation and identification for MS-based proteomics via free-flow electrophoresis*](http://dx.doi.org/10.1021/pr0600632)
+
+and
+
+* Yi (2003) [*A microcapillary trap cartridge-microcapillary HPLC ESI emitter device capable of peptide MS2 at the attomole level on an ion trap MS with automated routine operation*](http://dx.doi.org/10.1002/rcm.1150)
+
+describe the HPLC-MS/MS method. Notable difference is IEF over ion exchang separation of peptides in the first dimension:
+
+* multidimensional LC-MS based shotfun proteomics traditionally 1) ion exchange, 2) RP-LC. IEF improved by **continuous [free-flow electrophoresis](https://en.wikipedia.org/wiki/Free-flow_electrophoresis)**.
+* FFE is used for quant. separations, conducted in a fast and gentle liquid-based manner (no solid matrix, like polyacrylamide)
+* high recovery rate - no analytes lost, hence "HP".
+
+> <sub>An even and laminar liquid film is conducted between two plates, split up in parallel fractionation tubes, collected in microtiter plates. A high voltage field is applied perpendicular, analytes separate by charge density and isoelectric point.
+
+* Aebersold lab incorporated the pI information as an additional [validation] parameter into a statistical model for discrimination between correct and incorrect peptide assignments to MS/MS spectra.
+  * Thus incorporated pI information from *PeptideProphet*, searching MS2 spectra against non-redundant NCBI predicted proteome along with known contaminants (like keratin) to validate assignments.
+  * SEQUEST gives multiple search scores for the database... PeptideProphet typically uses **the difference between measured and theoretical peptide mass**, no. of termini consistent with type of enzymatic cleavage, no, missed cleavage sites.
+
+
+
+
+
+
+
+
+
+
+
+
+> <sub>The probabilities of peptide assignments to spectra are computed without taking the pI values into consideration. SEcond, for each FFE fraction, the average pI of the correctly identified peptides in that fraction is calculated by summing the theoretical (seq. determined) pI values of each peptide assignment and using the peptide probabilities obtained at the first step as weight factors.
+
+> <sub>The standard deviation of pI values in each FFE fraction is computed in an analagous manner. Third, a standardized score (pI score) is calculated for each peptide assignment by subtracting the average pI value and dividing it by the standard deviation (using the average value and the standard deviation for the corresponding FFE fraction).
+
+> <sub>...Inclusion of pI information in the model results in **increased probability of lower scoring peptides if they have a pI close to the average pI observed for high scoring peptides from the same fraction, and in decreased score of peptides which have a pI far away from the average pI**.
+
+* Since the pI score is based on avg. calculated pI of the identified peptides, **the model is independent of changes in buffer conditions and temperature** which influences the pK of the analytes thus the pI function in the PeptideProphet is applicable to any type of IEF based separation independent of separation conditions.
+* FFE-IEF: High sample load, short separation times and **no regeneration time** between consecutive runs, attractive for shotgun MS.
+
 
 ---
 
